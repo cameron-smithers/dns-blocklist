@@ -1,0 +1,7 @@
+@@youtube.com^$client=Roku
+@@googlevideo.com^$client=Roku
+@@clients*.google.com^$client=Roku
+@@googleusercontent.com^$client=Roku
+@@ggpht.com^$client=Roku
+@@ytimg.com^$client=Roku
+@@gstatic.com$client=Roku
