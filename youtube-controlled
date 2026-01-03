@@ -1,2 +1,4 @@
 ||*youtube.com^$client=Chromebook|Roku|'Mirabelle Minecraft Computer'|'Nintendo Switch'
 ||*googlevideo.com^client=Chromebook|Roku|'Mirabelle Minecraft Computer'|'Nintendo Switch'
+||clients*.google.com^client=Chromebook|Roku|'Mirabelle Minecraft Computer'|'Nintendo Switch'
+||*googleusercontent.com^client=Chromebook|Roku|'Mirabelle Minecraft Computer'|'Nintendo Switch'
