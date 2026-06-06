@@ -1,3 +1,6 @@
 @@spotify.com^$client=Roku
 @@roku.com^client=Roku
 @@tv.scdn.co^client=Roku
+@@scribe.logs.roku.com^client=Roku
+@@api.roku.com^client=Roku
+@@bayside.logs.roku.com^client=Roku
