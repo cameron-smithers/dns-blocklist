@@ -1,9 +1,47 @@
-! Title: Roku Spotify Whitelist
-! Description: Allows Spotify to work on Roku while keeping Roku ads, telemetry, Netflix, and other services blocked.
+! Title: Roku Spotify Temporary Broad Whitelist
+! Description: Temporary broad allowlist for troubleshooting Spotify on Roku.
+! Goal: Make Spotify load first, then narrow by removing groups one at a time.
 ! Syntax: AdGuard Home DNS filtering rules
 
 ! =========================
-! Roku: allow Spotify only
+! TEMPORARY: allow all Roku platform services for Roku client
+! =========================
+
+@@||roku.com^$client=Roku,important
+@@||roku.tv^$client=Roku,important
+@@||sr.roku.com^$client=Roku,important
+@@||logs.roku.com^$client=Roku,important
+@@||cloudservices.roku.com^$client=Roku,important
+@@||channels.roku.com^$client=Roku,important
+@@||api.roku.com^$client=Roku,important
+@@||api2.sr.roku.com^$client=Roku,important
+@@||images.sr.roku.com^$client=Roku,important
+@@||rsp.web.roku.com^$client=Roku,important
+@@||scribe.logs.roku.com^$client=Roku,important
+@@||bayside.logs.roku.com^$client=Roku,important
+
+! =========================
+! TEMPORARY: allow Roku ad/measurement/telemetry domains
+! We will remove these first after Spotify works.
+! =========================
+
+@@||ravm.tv^$client=Roku,important
+@@||display.ravm.tv^$client=Roku,important
+@@||p.ravm.tv^$client=Roku,important
+@@||cdn.ravm.tv^$client=Roku,important
+
+@@||w55c.net^$client=Roku,important
+@@||ads.w55c.net^$client=Roku,important
+
+@@||admeasurement.com^$client=Roku,important
+@@||roku.admeasurement.com^$client=Roku,important
+
+@@||doubleclick.net^$client=Roku,important
+@@||securepubads.g.doubleclick.net^$client=Roku,important
+@@||googleads.g.doubleclick.net^$client=Roku,important
+
+! =========================
+! Allow Spotify broadly
 ! =========================
 
 @@||spotify.com^$client=Roku,important
@@ -11,8 +49,9 @@
 @@||scdn.co^$client=Roku,important
 @@||spotifycdn.com^$client=Roku,important
 @@||spotifycdn.net^$client=Roku,important
+@@||pscdn.co^$client=Roku,important
 
-! Spotify app/API endpoints
+! Specific Spotify endpoints, included for clarity
 @@||spclient.wg.spotify.com^$client=Roku,important
 @@||apresolve.spotify.com^$client=Roku,important
 @@||dealer.spotify.com^$client=Roku,important
@@ -21,49 +60,23 @@
 @@||gae2-spclient.spotify.com^$client=Roku,important
 
 ! =========================
-! Roku: allow only the platform services needed to launch channels
+! TEMPORARY: allow Netflix broadly
 ! =========================
 
-@@||api.roku.com^$client=Roku,important
-@@||api2.sr.roku.com^$client=Roku,important
-@@||images.sr.roku.com^$client=Roku,important
-@@||channels.roku.com^$client=Roku,important
-@@||rsp.web.roku.com^$client=Roku,important
-@@||cloudservices.roku.com^$client=Roku,important
+@@||netflix.com^$client=Roku,important
+@@||netflix.net^$client=Roku,important
+@@||nflximg.com^$client=Roku,important
+@@||nflximg.net^$client=Roku,important
+@@||nflxvideo.net^$client=Roku,important
+@@||nflxso.net^$client=Roku,important
+@@||nflxext.com^$client=Roku,important
+@@||nflxsearch.net^$client=Roku,important
 
-! =========================
-! Keep Roku ads, tracking, and telemetry blocked
-! =========================
-
-||ravm.tv^$client=Roku
-||display.ravm.tv^$client=Roku
-||p.ravm.tv^$client=Roku
-||cdn.ravm.tv^$client=Roku
-
-||logs.roku.com^$client=Roku
-||scribe.logs.roku.com^$client=Roku
-||bayside.logs.roku.com^$client=Roku
-
-||ads.roku.com^$client=Roku
-||rokuads.com^$client=Roku
-||ads.w55c.net^$client=Roku
-||roku.admeasurement.com^$client=Roku
-
-||securepubads.g.doubleclick.net^$client=Roku
-||doubleclick.net^$client=Roku
-||googleads.g.doubleclick.net^$client=Roku
-
-! =========================
-! Keep Netflix blocked on Roku
-! =========================
-
-||netflix.com^$client=Roku
-||nflximg.com^$client=Roku
-||nflxvideo.net^$client=Roku
-||nflxso.net^$client=Roku
-||nflxext.com^$client=Roku
-||nrdp.prod.cloud.netflix.com^$client=Roku
-||api-global.netflix.com^$client=Roku
-||secure.netflix.com^$client=Roku
-||customerevents.netflix.com^$client=Roku
-||uiboot.netflix.com^$client=Roku
+! Specific Netflix/Roku app startup domains seen in your logs
+@@||secure.netflix.com^$client=Roku,important
+@@||api-global.netflix.com^$client=Roku,important
+@@||customerevents.netflix.com^$client=Roku,important
+@@||uiboot.netflix.com^$client=Roku,important
+@@||nrdp.prod.cloud.netflix.com^$client=Roku,important
+@@||nrdp-cell4.prod.ftl.netflix.com^$client=Roku,important
+@@||nrdp.nccp.netflix.com^$client=Roku,important
