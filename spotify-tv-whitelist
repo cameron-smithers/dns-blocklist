@@ -1,20 +1,24 @@
-! Title: Roku Spotify Whitelist - Broader Test
-! Description: Broader temporary allowlist for getting Spotify working on Roku.
+! Title: Roku Spotify Permissive Whitelist
+! Description: Permissive troubleshooting allowlist for Spotify on Roku.
+! Goal: Allow Spotify plus Roku startup/runtime, telemetry, ad/measurement, Netflix, and cached startup domains seen in logs.
 ! Syntax: AdGuard Home DNS filtering rules
 
 ! =========================
-! Spotify on Roku
+! Spotify core domains
 ! =========================
 
 @@||spotify.com^$client=Roku,important
+@@||open.spotify.com^$client=Roku,important
+@@||accounts.spotify.com^$client=Roku,important
+@@||api.spotify.com^$client=Roku,important
 @@||spoti.fi^$client=Roku,important
-@@||scdn.co^$client=Roku,important
-@@||spotifycdn.com^$client=Roku,important
-@@||spotifycdn.net^$client=Roku,important
-@@||pscdn.co^$client=Roku,important
 
-! Spotify TV/app endpoints
+! =========================
+! Spotify TV/app/API endpoints
+! =========================
+
 @@||api-tv.spotify.com^$client=Roku,important
+@@||api-partner.spotify.com^$client=Roku,important
 @@||spclient.wg.spotify.com^$client=Roku,important
 @@||apresolve.spotify.com^$client=Roku,important
 @@||dealer.spotify.com^$client=Roku,important
@@ -22,23 +26,58 @@
 @@||gae2-spclient.spotify.com^$client=Roku,important
 
 ! =========================
-! Roku platform services
-! Broader than ideal, but useful for troubleshooting
+! Spotify CDN / media domains
+! =========================
+
+@@||scdn.co^$client=Roku,important
+@@||tv.scdn.co^$client=Roku,important
+@@||tvscdn.co^$client=Roku,important
+@@||spotifycdn.com^$client=Roku,important
+@@||spotifycdn.net^$client=Roku,important
+@@||pscdn.co^$client=Roku,important
+
+! =========================
+! Roku platform / channel startup
+! Explicitly listed from logs
 ! =========================
 
 @@||roku.com^$client=Roku,important
-@@||roku.tv^$client=Roku,important
-@@||sr.roku.com^$client=Roku,important
 @@||api.roku.com^$client=Roku,important
-@@||api2.sr.roku.com^$client=Roku,important
-@@||images.sr.roku.com^$client=Roku,important
+@@||cloudservices.roku.com^$client=Roku,important
 @@||channels.roku.com^$client=Roku,important
 @@||rsp.web.roku.com^$client=Roku,important
-@@||cloudservices.roku.com^$client=Roku,important
+@@||apps-dsct.roku.com^$client=Roku,important
+@@||themes.services.roku.com^$client=Roku,important
+@@||austins.roku.com^$client=Roku,important
+
+! =========================
+! Roku sr.roku.com startup services
+! Explicit subdomains
+! =========================
+
+@@||sr.roku.com^$client=Roku,important
+@@||api2.sr.roku.com^$client=Roku,important
+@@||images.sr.roku.com^$client=Roku,important
+@@||navigator.sr.roku.com^$client=Roku,important
+
+! =========================
+! Roku runtime domain seen in logs
+! =========================
+
+@@||rutime.com^$client=Roku,important
+@@||r2.rutime.com^$client=Roku,important
+@@||api.r2.rutime.com^$client=Roku,important
+
+! =========================
+! Roku voice / system services seen earlier
+! =========================
+
+@@||hints.voice.roku.com^$client=Roku,important
+@@||samples.voice-ci.roku.com^$client=Roku,important
 
 ! =========================
 ! Roku logs / telemetry
-! Temporarily allowed for troubleshooting
+! Temporarily allowed
 ! =========================
 
 @@||logs.roku.com^$client=Roku,important
@@ -47,7 +86,7 @@
 
 ! =========================
 ! Roku ad / measurement domains
-! Temporarily allowed for troubleshooting
+! Temporarily allowed
 ! =========================
 
 @@||ravm.tv^$client=Roku,important
@@ -55,22 +94,27 @@
 @@||p.ravm.tv^$client=Roku,important
 @@||cdn.ravm.tv^$client=Roku,important
 
-@@||doubleclick.net^$client=Roku,important
-@@||securepubads.g.doubleclick.net^$client=Roku,important
-@@||googleads.g.doubleclick.net^$client=Roku,important
-
 @@||w55c.net^$client=Roku,important
 @@||ads.w55c.net^$client=Roku,important
 
 @@||admeasurement.com^$client=Roku,important
 @@||roku.admeasurement.com^$client=Roku,important
 
+@@||doubleclick.net^$client=Roku,important
+@@||securepubads.g.doubleclick.net^$client=Roku,important
+@@||googleads.g.doubleclick.net^$client=Roku,important
+
 ! =========================
-! Netflix on Roku
-! Temporarily allowed for troubleshooting
+! Netflix domains seen during Roku startup
+! Temporarily allowed
 ! =========================
 
 @@||netflix.com^$client=Roku,important
+@@||secure.netflix.com^$client=Roku,important
+@@||api-global.netflix.com^$client=Roku,important
+@@||customerevents.netflix.com^$client=Roku,important
+@@||uiboot.netflix.com^$client=Roku,important
+
 @@||netflix.net^$client=Roku,important
 @@||nflximg.com^$client=Roku,important
 @@||nflximg.net^$client=Roku,important
@@ -79,10 +123,15 @@
 @@||nflxext.com^$client=Roku,important
 @@||nflxsearch.net^$client=Roku,important
 
-@@||secure.netflix.com^$client=Roku,important
-@@||api-global.netflix.com^$client=Roku,important
-@@||customerevents.netflix.com^$client=Roku,important
-@@||uiboot.netflix.com^$client=Roku,important
 @@||nrdp.prod.cloud.netflix.com^$client=Roku,important
 @@||nrdp-cell4.prod.ftl.netflix.com^$client=Roku,important
 @@||nrdp.nccp.netflix.com^$client=Roku,important
+
+! =========================
+! Apple CDN domains seen during startup window
+! Temporarily allowed
+! =========================
+
+@@||cdn-apple.com^$client=Roku,important
+@@||mediaservices.cdn-apple.com^$client=Roku,important
+@@||secure-appldn.apple.com^$client=Roku,important
