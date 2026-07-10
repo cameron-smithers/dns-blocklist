@@ -1,29 +1,43 @@
 ! =========================
-! Roku: allow Spotify only
+! Roku: Spotify app functional whitelist
 ! =========================
 
-@@||spotify.com^$client=Roku
-@@||spoti.fi^$client=Roku
-@@||scdn.co^$client=Roku
-@@||spotifycdn.com^$client=Roku
-@@||spotifycdn.net^$client=Roku
+! Spotify core
+@@||spotify.com^$client=Roku,important
+@@||spoti.fi^$client=Roku,important
+@@||scdn.co^$client=Roku,important
+@@||spotifycdn.com^$client=Roku,important
+@@||spotifycdn.net^$client=Roku,important
 
 ! Spotify app/API endpoints
-@@||spclient.wg.spotify.com^$client=Roku
-@@||apresolve.spotify.com^$client=Roku
-@@||dealer.spotify.com^$client=Roku
-@@||api-tv.spotify.com^$client=Roku
+@@||spclient.wg.spotify.com^$client=Roku,important
+@@||apresolve.spotify.com^$client=Roku,important
+@@||dealer.spotify.com^$client=Roku,important
+@@||api-tv.spotify.com^$client=Roku,important
+
+! Roku platform services needed for channel/app loading
+@@||api.roku.com^$client=Roku,important
+@@||api2.sr.roku.com^$client=Roku,important
+@@||images.sr.roku.com^$client=Roku,important
+@@||channels.roku.com^$client=Roku,important
+@@||rsp.web.roku.com^$client=Roku,important
+@@||cloudservices.roku.com^$client=Roku,important
 
 ! =========================
-! Roku: keep ads/logging blocked
+! Keep Roku ads/tracking blocked
 ! =========================
 
 ||ravm.tv^$client=Roku
-||logs.roku.com^$client=Roku
-||scribe.logs.roku.com^$client=Roku
-||bayside.logs.roku.com^$client=Roku
-||cloudservices.roku.com^$client=Roku
+||display.ravm.tv^$client=Roku
+||p.ravm.tv^$client=Roku
 ||ads.roku.com^$client=Roku
 ||rokuads.com^$client=Roku
 ||ads.w55c.net^$client=Roku
 ||roku.admeasurement.com^$client=Roku
+||securepubads.g.doubleclick.net^$client=Roku
+||doubleclick.net^$client=Roku
+
+! Keep logs blocked unless testing proves otherwise
+||scribe.logs.roku.com^$client=Roku
+||bayside.logs.roku.com^$client=Roku
+||logs.roku.com^$client=Roku
