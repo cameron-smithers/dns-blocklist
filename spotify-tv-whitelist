@@ -3,18 +3,19 @@
 ! =========================
 
 @@||spotify.com^$client=Roku
+@@||spoti.fi^$client=Roku
+@@||scdn.co^$client=Roku
 @@||spotifycdn.com^$client=Roku
 @@||spotifycdn.net^$client=Roku
-@@||scdn.co^$client=Roku
-@@||spoti.fi^$client=Roku
 
-! Spotify app/API endpoints that may appear separately
+! Spotify app/API endpoints
 @@||spclient.wg.spotify.com^$client=Roku
 @@||apresolve.spotify.com^$client=Roku
 @@||dealer.spotify.com^$client=Roku
+@@||api-tv.spotify.com^$client=Roku
 
 ! =========================
-! Roku: keep platform ads/logging blocked
+! Roku: keep ads/logging blocked
 ! =========================
 
 ||ravm.tv^$client=Roku
