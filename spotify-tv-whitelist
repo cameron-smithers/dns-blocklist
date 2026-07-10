@@ -1,6 +1,22 @@
-! Title: Roku Temporary Full Allow
-! Description: Temporary full allow for Roku client 192.168.2.134.
-! Purpose: Prove whether AdGuard DNS filtering is causing Spotify-on-Roku startup failure.
+! Title: Roku Spotify Whitelist
+! Description: Minimal Spotify allowlist for Roku. Does not allow Roku telemetry, Roku ads, Netflix, DoubleClick, or ravm.tv.
 ! Syntax: AdGuard Home DNS filtering rules
 
-@@||*^$client=192.168.2.134,important
+! =========================
+! Spotify on Roku
+! =========================
+
+@@||spotify.com^$client=Roku,important
+@@||spoti.fi^$client=Roku,important
+@@||scdn.co^$client=Roku,important
+@@||spotifycdn.com^$client=Roku,important
+@@||spotifycdn.net^$client=Roku,important
+@@||pscdn.co^$client=Roku,important
+
+! Spotify TV/app endpoints
+@@||api-tv.spotify.com^$client=Roku,important
+@@||spclient.wg.spotify.com^$client=Roku,important
+@@||apresolve.spotify.com^$client=Roku,important
+@@||dealer.spotify.com^$client=Roku,important
+@@||gew-spclient.spotify.com^$client=Roku,important
+@@||gae2-spclient.spotify.com^$client=Roku,important
