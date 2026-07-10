@@ -1,6 +1,28 @@
-@@spotify.com^$client=Roku
-@@roku.com^$client=Roku
-@@tv.scdn.co^$client=Roku
-@@scribe.logs.roku.com^$client=Roku
-@@api.roku.com^$client=Roku
-@@bayside.logs.roku.com^$client=Roku
+! =========================
+! Roku: allow Spotify only
+! =========================
+
+@@||spotify.com^$client=Roku
+@@||spotifycdn.com^$client=Roku
+@@||spotifycdn.net^$client=Roku
+@@||scdn.co^$client=Roku
+@@||spoti.fi^$client=Roku
+
+! Spotify app/API endpoints that may appear separately
+@@||spclient.wg.spotify.com^$client=Roku
+@@||apresolve.spotify.com^$client=Roku
+@@||dealer.spotify.com^$client=Roku
+
+! =========================
+! Roku: keep platform ads/logging blocked
+! =========================
+
+||ravm.tv^$client=Roku
+||logs.roku.com^$client=Roku
+||scribe.logs.roku.com^$client=Roku
+||bayside.logs.roku.com^$client=Roku
+||cloudservices.roku.com^$client=Roku
+||ads.roku.com^$client=Roku
+||rokuads.com^$client=Roku
+||ads.w55c.net^$client=Roku
+||roku.admeasurement.com^$client=Roku
