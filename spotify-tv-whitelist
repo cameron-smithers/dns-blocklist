@@ -1,5 +1,5 @@
-! Title: Roku Spotify Whitelist
-! Description: Minimal Spotify allowlist for Roku. Does not allow Roku telemetry, Roku ads, Netflix, DoubleClick, or ravm.tv.
+! Title: Roku Spotify Whitelist - Broader Test
+! Description: Broader temporary allowlist for getting Spotify working on Roku.
 ! Syntax: AdGuard Home DNS filtering rules
 
 ! =========================
@@ -20,3 +20,69 @@
 @@||dealer.spotify.com^$client=Roku,important
 @@||gew-spclient.spotify.com^$client=Roku,important
 @@||gae2-spclient.spotify.com^$client=Roku,important
+
+! =========================
+! Roku platform services
+! Broader than ideal, but useful for troubleshooting
+! =========================
+
+@@||roku.com^$client=Roku,important
+@@||roku.tv^$client=Roku,important
+@@||sr.roku.com^$client=Roku,important
+@@||api.roku.com^$client=Roku,important
+@@||api2.sr.roku.com^$client=Roku,important
+@@||images.sr.roku.com^$client=Roku,important
+@@||channels.roku.com^$client=Roku,important
+@@||rsp.web.roku.com^$client=Roku,important
+@@||cloudservices.roku.com^$client=Roku,important
+
+! =========================
+! Roku logs / telemetry
+! Temporarily allowed for troubleshooting
+! =========================
+
+@@||logs.roku.com^$client=Roku,important
+@@||scribe.logs.roku.com^$client=Roku,important
+@@||bayside.logs.roku.com^$client=Roku,important
+
+! =========================
+! Roku ad / measurement domains
+! Temporarily allowed for troubleshooting
+! =========================
+
+@@||ravm.tv^$client=Roku,important
+@@||display.ravm.tv^$client=Roku,important
+@@||p.ravm.tv^$client=Roku,important
+@@||cdn.ravm.tv^$client=Roku,important
+
+@@||doubleclick.net^$client=Roku,important
+@@||securepubads.g.doubleclick.net^$client=Roku,important
+@@||googleads.g.doubleclick.net^$client=Roku,important
+
+@@||w55c.net^$client=Roku,important
+@@||ads.w55c.net^$client=Roku,important
+
+@@||admeasurement.com^$client=Roku,important
+@@||roku.admeasurement.com^$client=Roku,important
+
+! =========================
+! Netflix on Roku
+! Temporarily allowed for troubleshooting
+! =========================
+
+@@||netflix.com^$client=Roku,important
+@@||netflix.net^$client=Roku,important
+@@||nflximg.com^$client=Roku,important
+@@||nflximg.net^$client=Roku,important
+@@||nflxvideo.net^$client=Roku,important
+@@||nflxso.net^$client=Roku,important
+@@||nflxext.com^$client=Roku,important
+@@||nflxsearch.net^$client=Roku,important
+
+@@||secure.netflix.com^$client=Roku,important
+@@||api-global.netflix.com^$client=Roku,important
+@@||customerevents.netflix.com^$client=Roku,important
+@@||uiboot.netflix.com^$client=Roku,important
+@@||nrdp.prod.cloud.netflix.com^$client=Roku,important
+@@||nrdp-cell4.prod.ftl.netflix.com^$client=Roku,important
+@@||nrdp.nccp.netflix.com^$client=Roku,important
