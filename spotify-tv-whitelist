@@ -1,8 +1,11 @@
+! Title: Roku Spotify Whitelist
+! Description: Allows Spotify to work on Roku while keeping Roku ads, telemetry, Netflix, and other services blocked.
+! Syntax: AdGuard Home DNS filtering rules
+
 ! =========================
-! Roku: Spotify app functional whitelist
+! Roku: allow Spotify only
 ! =========================
 
-! Spotify core
 @@||spotify.com^$client=Roku,important
 @@||spoti.fi^$client=Roku,important
 @@||scdn.co^$client=Roku,important
@@ -14,8 +17,13 @@
 @@||apresolve.spotify.com^$client=Roku,important
 @@||dealer.spotify.com^$client=Roku,important
 @@||api-tv.spotify.com^$client=Roku,important
+@@||gew-spclient.spotify.com^$client=Roku,important
+@@||gae2-spclient.spotify.com^$client=Roku,important
 
-! Roku platform services needed for channel/app loading
+! =========================
+! Roku: allow only the platform services needed to launch channels
+! =========================
+
 @@||api.roku.com^$client=Roku,important
 @@||api2.sr.roku.com^$client=Roku,important
 @@||images.sr.roku.com^$client=Roku,important
@@ -24,20 +32,38 @@
 @@||cloudservices.roku.com^$client=Roku,important
 
 ! =========================
-! Keep Roku ads/tracking blocked
+! Keep Roku ads, tracking, and telemetry blocked
 ! =========================
 
 ||ravm.tv^$client=Roku
 ||display.ravm.tv^$client=Roku
 ||p.ravm.tv^$client=Roku
+||cdn.ravm.tv^$client=Roku
+
+||logs.roku.com^$client=Roku
+||scribe.logs.roku.com^$client=Roku
+||bayside.logs.roku.com^$client=Roku
+
 ||ads.roku.com^$client=Roku
 ||rokuads.com^$client=Roku
 ||ads.w55c.net^$client=Roku
 ||roku.admeasurement.com^$client=Roku
+
 ||securepubads.g.doubleclick.net^$client=Roku
 ||doubleclick.net^$client=Roku
+||googleads.g.doubleclick.net^$client=Roku
 
-! Keep logs blocked unless testing proves otherwise
-||scribe.logs.roku.com^$client=Roku
-||bayside.logs.roku.com^$client=Roku
-||logs.roku.com^$client=Roku
+! =========================
+! Keep Netflix blocked on Roku
+! =========================
+
+||netflix.com^$client=Roku
+||nflximg.com^$client=Roku
+||nflxvideo.net^$client=Roku
+||nflxso.net^$client=Roku
+||nflxext.com^$client=Roku
+||nrdp.prod.cloud.netflix.com^$client=Roku
+||api-global.netflix.com^$client=Roku
+||secure.netflix.com^$client=Roku
+||customerevents.netflix.com^$client=Roku
+||uiboot.netflix.com^$client=Roku
