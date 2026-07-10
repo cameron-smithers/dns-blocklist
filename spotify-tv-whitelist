@@ -61,12 +61,15 @@
 @@||navigator.sr.roku.com^$client=Roku,important
 
 ! =========================
-! Roku runtime domain seen in logs
+! Roku runtime domains seen in logs
 ! =========================
 
 @@||rutime.com^$client=Roku,important
 @@||r2.rutime.com^$client=Roku,important
 @@||api.r2.rutime.com^$client=Roku,important
+
+@@||rokutime.com^$client=Roku,important
+@@||api-g2.rokutime.com^$client=Roku,important
 
 ! =========================
 ! Roku voice / system services seen earlier
@@ -103,6 +106,9 @@
 @@||doubleclick.net^$client=Roku,important
 @@||securepubads.g.doubleclick.net^$client=Roku,important
 @@||googleads.g.doubleclick.net^$client=Roku,important
+
+@@||googlesyndication.com^$client=Roku,important
+@@||tpc.googlesyndication.com^$client=Roku,important
 
 ! =========================
 ! Netflix domains seen during Roku startup
